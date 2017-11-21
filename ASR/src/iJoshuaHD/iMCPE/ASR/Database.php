@@ -26,7 +26,7 @@ class Database{
 			$this->db = @new \mysqli($mysql_hostname, $mysql_user, $mysql_password, $mysql_database, $mysql_port);
 			$this->db_check = @fsockopen($mysql_hostname, $mysql_port, $errno, $errstr, 5);
 			
-			$this->plugin->getLogger()->info("Connecting to MySQL Database ...");
+			$this->plugin->getLogger()->info("Connecting to VPE MYSQL");
 
 			if (!$this->db_check){
 				$this->plugin->getLogger()->critical("Cant find MySQL Server running.");
