@@ -39,7 +39,7 @@ class Commands implements CommandExecutor{
 		
 			case "restart":
 				$time = $this->plugin->getTimer();
-				$sender->sendMessage("[ASR] The server will restart in $time");
+				$sender->sendMessage("§l§8(§6!§8)§6Server will restart in $time");
 			break;
 		
 		}
