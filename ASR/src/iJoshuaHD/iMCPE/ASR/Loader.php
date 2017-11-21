@@ -115,16 +115,16 @@ class Loader extends PluginBase{
 	public function count_down($seconds){
 		if($seconds == 1){
 			foreach($this->getServer()->getOnlinePlayers() as $p){
-				$p->kick("Server Restart");
+				$p->kick("§l§8(§6!§8)§6Server restart");
 			}
 			$this->getServer()->shutdown();
 			return;
 		}else{
 			$seconds--;
 			$this->setTimer($seconds, "secs.");
-			if($seconds == 30) $this->broadcast("Server will restart in $seconds seconds.");
-			if($seconds == 10) $this->broadcast("Server will restart in $seconds seconds.");
-			if($seconds < 6) $this->broadcast("Server will restart in $seconds.");
+			if($seconds == 30) $this->broadcast("§l§8(§6!§8)§6Server will restart in $seconds seconds.");
+			if($seconds == 10) $this->broadcast("§l§8(§6!§8)§6Server will restart in $seconds seconds.");
+			if($seconds < 6) $this->broadcast("§l§8(§6!§8)§6Server will restart in $seconds");
 			$this->getServer()->getScheduler()->scheduleDelayedTask(new CallbackTask([$this,"count_down" ], [$seconds]), 20);
 		}
 	}
